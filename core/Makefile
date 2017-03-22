@@ -3045,10 +3045,12 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 
 TARGET_PACKAGE := $(PRODUCT_OUT)/ LeanOS-$(PRODUCT_VERSION_MAJOR)-$(LEAN_BUILD)-$(LEAN_BUILD_TYPE)$(LEAN_POSTFIX).zip
 
-.PHONY: otapackage bacon
+.PHONY: otapackage bacon lean
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
-  $(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
+bacon: lean
+aex: otapackage
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(TARGET_PACKAGE) > $(TARGET_PACKAGE).md5sum
 	@echo -e ${CL_BLD}${CL_CYN}"===============================-Package complete-==============================="${CL_RST}
 	@echo -e ${CL_BLD}${CL_YLW}"Zip: "${CL_YLW} $(TARGET_PACKAGE)${CL_RST}
