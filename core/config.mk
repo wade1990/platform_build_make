@@ -1101,6 +1101,17 @@ $(eval include device/lean/sepolicy/common/sepolicy.mk)
 endif
 
 # Include any vendor specific config.mk file
--include vendor/*/build/core/config.mk
+-include $(TOPDIR)vendor/*/build/core/config.mk
+
+# Include any vendor specific apicheck.mk file
+-include $(TOPDIR)vendor/*/build/core/apicheck.mk
+
+# Rules for QCOM targets
+-include $(TOPDIR)vendor/lean/build/core/qcom_target.mk
+
+# Rules for MTK targets
+-include $(TOPDIR)vendor/lean/build/core/mtk_target.mk
+endif
+
 
 include $(BUILD_SYSTEM)/dumpvar.mk
