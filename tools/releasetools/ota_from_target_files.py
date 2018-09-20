@@ -882,13 +882,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  if target_info.GetBuildProp("ro.extended.display.version") is not None:
-    buildid = target_info.GetBuildProp("ro.extended.display.version")
+  if target_info.GetBuildProp("ro.lean.display.version") is not None:
+    buildid = target_info.GetBuildProp("ro.lean.display.version")
     buildidn = target_info.GetBuildProp("ro.build.id")
     buildday = target_info.GetBuildProp("ro.build.date")
     securep = target_info.GetBuildProp("ro.build.version.security_patch")
     density = target_info.GetBuildProp("ro.sf.lcd_density",False)
-    device = target_info.GetBuildProp("ro.aex.device")
+    device = target_info.GetBuildProp("ro.lean.device")
     androidver = target_info.GetBuildProp("ro.build.version.release")
     manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
     sdkver = target_info.GetBuildProp("ro.build.version.sdk")
