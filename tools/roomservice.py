@@ -43,11 +43,11 @@ except ImportError:
 DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
-custom_local_manifest = ".repo/local_manifests/aex_manifest.xml"
-custom_default_revision = "9.x"
-custom_dependencies = "aosp.dependencies"
-org_manifest = "aex-devices"  # leave empty if org is provided in manifest
-org_display = "AospExtended-Devices"  # needed for displaying
+custom_local_manifest = ".repo/local_manifests/lean_manifest.xml"
+custom_default_revision = "lean-9.x"
+custom_dependencies = "lean.dependencies"
+org_manifest = "lean-devices"  # leave empty if org is provided in manifest
+org_display = "Lean-Devices"  # needed for displaying
 
 github_auth = None
 
