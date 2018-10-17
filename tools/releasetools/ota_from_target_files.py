@@ -831,31 +831,31 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.Print("=================================================");
   script.Print("");
-  script.Print("               `-/+syhhddddhhys+/-`                    ");
-  script.Print("           `:oyddddddddddddddddddddyo:`                ");
-  script.Print("         :ohddddddddddddddddddddddddddho-              ");
-  script.Print("       /yddddddddddddddddddddddddddddddddy/            ");
-  script.Print("     :yddddddddddddddddddddddddddddddddddddy:          ");
-  script.Print("   `odddddddddddy:--------------:ydddddddddddo`        ");
-  script.Print("  `ydddddddddddh`+dddddddddddddd+`hdddddddddddy`       ");
-  script.Print(" `yddddddddddddh oddddddddddddddo hddddddddddddy`      ");
-  script.Print(" sdddddddddddddd./dddddddddddddd/`ddddddddddddddo      ");
-  script.Print("-ddddddddddddddd-:ddddhddddddddd:-ddddddddddddddd-     ");
-  script.Print("oddddddddddddddd/.ddd+`sysshdddd./dddddddddddddddo     ");
-  script.Print("hddddddddddddddd+`ddddh.  :.oddd`+dddddddddddddddh     ");
-  script.Print("dddddddddddddddds hdddy     /ddh sdddddddddddddddd     ");
-  script.Print("hdddddddddddddddy sdddy` -/oddds ydddddddddddddddh     ");
-  script.Print("odddddddddddddddd odddddhddddddo ddddddddddddddddo     ");
-  script.Print("-dddddddddddddddd./dddddddddddd/.dddddddddddddddd-     ");
-  script.Print(" oddddddddddddddd-:dddddddddddd:-dddddddddddddddo      ");
-  script.Print(" `ydddddddddddddd/.dddddddddddd./ddddddddddddddy`      ");
-  script.Print("  `ydddddddddddddo yddddddddddy odddddddddddddy`       ");
-  script.Print("   `odddddddddddddo------------odddddddddddddo`        ");
-  script.Print("     :yddddddddddddddddddddddddddddddddddddy:          ");
-  script.Print("       /yddddddddddddddddddddddddddddddddy/            ");
-  script.Print("         -ohddddddddddddddddddddddddddho-              ");
-  script.Print("           `:oyddddddddddddddddddddyo:`                ");
-  script.Print("               `-/+syhhddddhhys+/-`                    ");
+  script.Print("               `-/+syhhddddhhys+/-`               ");
+  script.Print("           `:oyddddddddddddddddddddyo:`           ");
+  script.Print("         :ohddddddddddddddddddddddddddho-         ");
+  script.Print("       /yddddddddddddddddddddddddddddddddy/       ");
+  script.Print("     :yddddddddddddddddddddddddddddddddddddy:     ");
+  script.Print("   `odddddddddddy:--------------:ydddddddddddo`   ");
+  script.Print("  `ydddddddddddh`+dddddddddddddd+`hdddddddddddy`  ");
+  script.Print(" `yddddddddddddh oddddddddddddddo hddddddddddddy` ");
+  script.Print(" sdddddddddddddd./dddddddddddddd/`ddddddddddddddo ");
+  script.Print("-ddddddddddddddd-:ddddhddddddddd:-ddddddddddddddd ");
+  script.Print("oddddddddddddddd/.ddd+`sysshdddd./ddddddddddddddd ");
+  script.Print("hddddddddddddddd+`ddddh.  :.oddd`+ddddddddddddddd ");
+  script.Print("dddddddddddddddds hdddy     /ddh sddddddddddddddd ");
+  script.Print("hdddddddddddddddy sdddy` -/oddds yddddddddddddddd ");
+  script.Print("odddddddddddddddd odddddhddddddo dddddddddddddddd ");
+  script.Print("-dddddddddddddddd./dddddddddddd/.dddddddddddddddd ");
+  script.Print(" oddddddddddddddd-:dddddddddddd:-dddddddddddddddo ");
+  script.Print(" `ydddddddddddddd/.dddddddddddd./ddddddddddddddy  ");
+  script.Print("  `ydddddddddddddo yddddddddddy odddddddddddddy`  ");
+  script.Print("   `odddddddddddddo------------odddddddddddddo`   ");
+  script.Print("     :yddddddddddddddddddddddddddddddddddddy:     ");
+  script.Print("       /yddddddddddddddddddddddddddddddddy/       ");
+  script.Print("         -ohddddddddddddddddddddddddddho-         ");
+  script.Print("           `:oyddddddddddddddddddddyo:`           ");
+  script.Print("               `-/+syhhddddhhys+/-`               ");
 
   script.Print("                    LeanOS");
   script.Print("");
@@ -881,39 +881,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Unmount("/system")
 
   system_progress = 0.75
-
-  if target_info.GetBuildProp("ro.lean.display.version") is not None:
-    buildid = target_info.GetBuildProp("ro.lean.display.version")
-    buildidn = target_info.GetBuildProp("ro.build.id")
-    buildday = target_info.GetBuildProp("ro.build.date")
-    securep = target_info.GetBuildProp("ro.build.version.security_patch")
-    density = target_info.GetBuildProp("ro.sf.lcd_density",False)
-    device = target_info.GetBuildProp("ro.lean.device")
-    androidver = target_info.GetBuildProp("ro.build.version.release")
-    manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
-    sdkver = target_info.GetBuildProp("ro.build.version.sdk")
-    script.Print(" **************** Software *****************");
-    script.Print(" OS version: %s"%(buildid));
-    script.Print("");
-    script.Print(" Android version: %s"%(androidver));
-    script.Print("");
-    script.Print(" Security patch: %s"%(securep));
-    script.Print("");
-    script.Print(" SDK version: %s"%(sdkver));
-    script.Print("");
-    script.Print(" Root status: Disabled");
-    script.Print("");
-    script.Print(" Build ID: %s"%(buildidn));
-    script.Print("");
-    script.Print(" Build date: %s"%(buildday));
-    script.Print(" **************** Hardware *****************");
-    script.Print(" Device codename: %s"%(device));
-    script.Print("");
-    script.Print(" Manufacturer: %s"%(manufacturer));
-    script.Print("");
-    script.Print(" LCD density: %s"%(density));
-    script.Print("");
-    script.Print(" *******************************************");
 
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
