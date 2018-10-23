@@ -29,7 +29,7 @@ Invoke ". build/envsetup.sh" from your shell to add the following functions to y
 
 EOF
 
-    __print_lean_functions_help
+    __print_custom_functions_help
 
 cat <<EOF
 
@@ -138,12 +138,12 @@ function check_product()
         return
     fi
     if (echo -n $1 | grep -q -e "^lean_") ; then
-        LEAN_BUILD=$(echo -n $1 | sed -e 's/^lean_//g')
-        export BUILD_NUMBER=$( (date +%s%N ; echo $LEAN_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
+        CUSTOM_BUILD=$(echo -n $1 | sed -e 's/^lean_//g')
+        export BUILD_NUMBER=$( (date +%s%N ; echo $CUSTOM_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
     else
-        LEAN_BUILD=
+        CUSTOM_BUILD=
     fi
-    export LEAN_BUILD
+    export CUSTOM_BUILD
 
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \

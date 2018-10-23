@@ -331,7 +331,7 @@ endif
 	$(hide) TARGET_BUILD_TYPE="$(TARGET_BUILD_VARIANT)" \
 			TARGET_BUILD_FLAVOR="$(TARGET_BUILD_FLAVOR)" \
 			TARGET_DEVICE="$(TARGET_DEVICE)" \
-			LEAN_DEVICE="$(TARGET_DEVICE)" \
+			CUSTOM_DEVICE="$(TARGET_DEVICE)" \
 			PRODUCT_NAME="$(TARGET_PRODUCT)" \
 			PRODUCT_BRAND="$(PRODUCT_BRAND)" \
 			PRODUCT_DEFAULT_LOCALE="$(call get-default-product-locale,$(PRODUCT_LOCALES))" \
@@ -3047,13 +3047,13 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-TARGET_PACKAGE := $(PRODUCT_OUT)/ LeanOS-$(LEAN_VERSION)-$(TARGET_DEVICE)-$(shell date -u +%Y%m%d-%H%M)-$(LEAN_BUILD_TYPE).zip
+TARGET_PACKAGE := $(PRODUCT_OUT)/$(LEAN_VERSION).zip
 
 .PHONY: otapackage bacon lean
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 bacon: lean
-aex: otapackage
+lean: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(TARGET_PACKAGE) > $(TARGET_PACKAGE).md5sum
 	@echo -e ${CL_BLD}${CL_CYN}"===============================-Package complete-==============================="${CL_RST}

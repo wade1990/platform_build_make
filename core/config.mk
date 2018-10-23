@@ -230,9 +230,9 @@ $(call project-set-path-variant,ril,TARGET_RIL_VARIANT,hardware/ril)
 $(call project-set-path-variant,recovery,RECOVERY_VARIANT,bootable/recovery)
 
 -include vendor/extra/BoardConfigExtra.mk
-
+ifneq ($(CUSTOM_BUILD),)
 include vendor/lean/config/BoardConfigLean.mk
-
+endif
 
 # The build system exposes several variables for where to find the kernel
 # headers:
@@ -1101,7 +1101,7 @@ include $(BUILD_SYSTEM)/ninja_config.mk
 include $(BUILD_SYSTEM)/soong_config.mk
 endif
 
-ifneq ($(LINEAGE_BUILD),)
+ifneq ($(CUSTOM_BUILD),)
 ## We need to be sure the global selinux policies are included
 ## last, to avoid accidental resetting by device configs
 #$(eval include device/lean/sepolicy/common/sepolicy.mk)
