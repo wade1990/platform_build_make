@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     SettingsIntelligence \
     SharedStorageBackup \
     SimAppDialog \
+    Snap \
     StorageManager \
     SubstratumHelperService \
     substratum-sysconfig.xml \
